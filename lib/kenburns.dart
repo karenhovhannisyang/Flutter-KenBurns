@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'KenburnsGenerator.dart';
@@ -134,7 +136,9 @@ class _KenBurnsState extends State<KenBurns> with TickerProviderStateMixin {
   Future<void> _createFadeAnimations() async {
     _fadeController?.dispose();
     _fadeController = AnimationController(
-      duration: widget.childrenFadeDuration,
+      duration: Duration(
+          seconds: min(widget.childrenFadeDuration!.inSeconds,
+              widget.maxAnimationDuration.inSeconds)),
       vsync: this,
     );
     _fadeInAnim = Tween(begin: 0.0, end: 1.0).animate(
