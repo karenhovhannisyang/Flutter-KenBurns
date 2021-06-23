@@ -332,8 +332,6 @@ class _KenBurnsState extends State<KenBurns> with TickerProviderStateMixin {
 
   Widget _buildChild() {
     if (_displayMultipleImage) {
-      _opacityNextChild = 0.0;
-
       /// If the [currentChildIndex] changed (different than [lastChildIndex])
       /// -> we animate to display the next child
       /// We use the stack to keep the same structure as multiple/single child
