@@ -90,7 +90,7 @@ class KenburnsGenerator {
 
     return KenBurnsGeneratorConfig(
       newDuration: nextDuration,
-      newTranslation: nextTranslation,
+      newTranslation: nextTranslation / 2,
       newScale: nextScale,
     );
   }
